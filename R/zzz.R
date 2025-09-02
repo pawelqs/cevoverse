@@ -10,7 +10,7 @@
     return(invisible())
   }
 
-  conflicts <- cevoverse_conflicts()
+  # conflicts <- cevoverse_conflicts()
   # inform_startup(tidyverse_conflict_message(conflicts))
 }
 
