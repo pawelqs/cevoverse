@@ -1,7 +1,7 @@
 core <- c(
+  "cevoextras",
   "cevodata",
   "cevomod",
-  "cevotools",
   "readthis"
 )
 
