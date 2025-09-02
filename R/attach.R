@@ -59,9 +59,11 @@ cevoverse_attach_message <- function(to_load) {
   paste0(header, "\n", paste(info, collapse = "\n"))
 }
 
+
 package_version_h <- function(pkg) {
   highlight_version(utils::packageVersion(pkg))
 }
+
 
 highlight_version <- function(x) {
   x <- as.character(x)
@@ -74,4 +76,16 @@ highlight_version <- function(x) {
   pieces <- strsplit(x, ".", fixed = TRUE)
   pieces <- lapply(pieces, function(x) ifelse(is_dev(x), cli::col_red(x), x))
   vapply(pieces, paste, collapse = ".", FUN.VALUE = character(1))
+}
+
+
+inform_startup <- function(msg, ...) {
+  if (is.null(msg)) {
+    return()
+  }
+  if (isTRUE(getOption("cevoverse.quiet"))) {
+    return()
+  }
+
+  rlang::inform(msg, ..., class = "packageStartupMessage")
 }

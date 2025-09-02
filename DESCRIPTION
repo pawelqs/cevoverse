@@ -16,6 +16,7 @@ Imports:
     forcats,
     ggplot2,
     purrr,
+    readthis,
     tibble,
     tidyr,
     verbose
